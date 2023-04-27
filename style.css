@@ -677,17 +677,21 @@ main .preNew {
     }
 
     .preFake {
-        left: -100vw;
+        z-index: 1;
     }
 
     .postFake {
-        right: -100vw;
+        z-index: 1;
     }
 
     .entry {
         width: clamp(50vw, 30vw + 200px, 350px);
         height: clamp(70vh, 15vh + 200px, 80vh);
         font-size: clamp(1em, 1vw + 1em, 3em);
+    }
+
+    .entry .entryInterior .arrows {
+        z-index: 2;
     }
 
     /* Game page */
@@ -734,25 +738,41 @@ main .preNew {
         justify-content: space-between;
     }
 
-    @keyframes preLeft {
+    @keyframes newLeft {
         0% {
             display: none;
+        }
+        100% {
+           display: none;
+        }
+    }
+
+    @keyframes preLeft {
+        0% {
+            display: none !important;
+            opacity: 0;
             
         }
         100% {
-            display: none;
+            display: none !important;
+            opacity: 0;
         }
     }
 
     @keyframes postLeft {
         0% {
             opacity: 50%;
+            display: block !important;
+            right: -50vw;
+            width: clamp(50vw, 30vw + 200px, 350px);
+            height: clamp(70vh, 15vh + 200px, 80vh);
             /* font-size: clamp(0.25em, .25vw + 0.5em, 1em); */
         }
         100% {
-            /* width: clamp(50vw, 30vw + 200px, 350px);
-            height: clamp(70vh, 15vh + 200px, 80vh); */
-            transform: translateX(-125vw);
+            display: block !important;
+            width: clamp(50vw, 30vw + 200px, 350px);
+            height: clamp(70vh, 15vh + 200px, 80vh);
+            transform: translateX(-17vw);
             opacity: 100%;
             border: 3px solid black;
             font-size: clamp(1em, 1vw + 0.45em, 1.8em);
@@ -766,7 +786,7 @@ main .preNew {
             opacity: 100%;
         }
         100% {
-            transform: translateX(-150vw);
+            transform: translateX(-100vw);
             /* font-size: clamp(0.25em, .2vw + 0.2em, .5em); */
             opacity: 75%;
         }
@@ -777,7 +797,7 @@ main .preNew {
             opacity: 100%;
         }
         100% {
-            transform: translateX(150vw);
+            transform: translateX(100vw);
             /* font-size: clamp(0.25em, .2vw + 0.2em, .5em); */
             opacity: 70%;
         }
@@ -786,12 +806,15 @@ main .preNew {
     @keyframes preRight {
         0% {
             opacity: 50%;
+            left: -50vw;
+            width: clamp(50vw, 30vw + 200px, 350px);
+            height: clamp(70vh, 15vh + 200px, 80vh);
             /* font-size: clamp(0.25em, .25vw + 0.5em, 1em); */
         }
         100% {
-            /* width: clamp(50vw, 30vw + 200px, 350px);
-            height: clamp(70vh, 15vh + 200px, 80vh); */
-            transform: translateX(125vw);
+            width: clamp(50vw, 30vw + 200px, 350px);
+            height: clamp(70vh, 15vh + 200px, 80vh);
+            transform: translateX(17vw);
             opacity: 100%;
             border: 3px solid black;
             font-size: clamp(1em, 1vw + 0.45em, 1.8em);
@@ -802,9 +825,11 @@ main .preNew {
     @keyframes postRight {
         0% {
             display: none;
+            opacity: 0;
         }
         100% {
             display: none;
+            opacity: 0;
         }
     }
 
@@ -815,12 +840,15 @@ main .preNew {
     @keyframes postLeft {
         0% {
             opacity: 50%;
+            right: -100vw;
+            width: clamp(50vw, 30vw + 200px, 350px);
+            height: clamp(70vh, 15vh + 200px, 80vh);
             /* font-size: clamp(0.25em, .25vw + 0.5em, 1em); */
         }
         100% {
             width: clamp(50vw, 30vw + 200px, 350px);
             height: clamp(70vh, 15vh + 200px, 80vh);
-            transform: translateX(-118vw);
+            transform: translateX(-5vw);
             opacity: 100%;
             border: 3px solid black;
             font-size: clamp(0.8em, 1vw + 0.35em, 1.4em);
@@ -831,12 +859,15 @@ main .preNew {
     @keyframes preRight {
         0% {
             opacity: 50%;
+            left: -100vw;
+            width: clamp(50vw, 30vw + 200px, 350px);
+            height: clamp(70vh, 15vh + 200px, 80vh);
             /* font-size: clamp(0.25em, .25vw + 0.5em, 1em); */
         }
         100% {
             width: clamp(50vw, 30vw + 200px, 350px);
             height: clamp(70vh, 15vh + 200px, 80vh);
-            transform: translateX(118vw);
+            transform: translateX(5vw);
             opacity: 100%;
             border: 3px solid black;
             font-size: clamp(0.8em, 1vw + 0.35em, 1.4em);
@@ -850,12 +881,15 @@ main .preNew {
     @keyframes postLeft {
         0% {
             opacity: 50%;
+            right: -100vw;
+            width: clamp(50vw, 30vw + 200px, 350px);
+            height: clamp(70vh, 15vh + 200px, 80vh);
             /* font-size: clamp(0.25em, .25vw + 0.5em, 1em); */
         }
         100% {
             width: clamp(50vw, 30vw + 200px, 350px);
             height: clamp(70vh, 15vh + 200px, 80vh);
-            transform: translateX(-110vw);
+            transform: translateX(-1vw);
             opacity: 100%;
             border: 3px solid black;
             font-size: clamp(0.8em, 1vw + 0.35em, 1.4em);
@@ -866,12 +900,15 @@ main .preNew {
     @keyframes preRight {
         0% {
             opacity: 50%;
+            left: -100vw;
+            width: clamp(50vw, 30vw + 200px, 350px);
+            height: clamp(70vh, 15vh + 200px, 80vh);
             /* font-size: clamp(0.25em, .25vw + 0.5em, 1em); */
         }
         100% {
             width: clamp(50vw, 30vw + 200px, 350px);
             height: clamp(70vh, 15vh + 200px, 80vh);
-            transform: translateX(110vw);
+            transform: translateX(1vw);
             opacity: 100%;
             border: 3px solid black;
             font-size: clamp(0.8em, 1vw + 0.35em, 1.4em);
