@@ -1,0 +1,882 @@
+:root {
+    --green: rgb(5, 57, 3);
+    --blue: rgb(29, 61, 167);
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* General Classes */
+
+.hide {
+    opacity: 0 !important;
+}
+
+.hidden {
+    display: none;
+}
+
+.showing {
+    display: block;
+}
+
+body {
+    background: linear-gradient(90deg, rgba(184,184,158,1) 0%, rgba(245,245,220,1) 50%, rgba(184,184,158,1) 100%);
+    font-family: Helvetica, sans-serif; 
+}
+
+/* Navigation and h1 */
+
+nav {
+    background-color: rgb(5, 57, 3);
+    border: 1px solid black;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+}
+
+nav .interior {
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+    padding: 1%;
+}
+
+nav h2 {
+    cursor: pointer;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    font-size: clamp(2em, 2vw + 1em, 8em);
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+/* Entry Section */
+
+main {
+    display: flex;
+}
+
+main .preEntry, main .postEntry {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    /* margin-left: 15%; */
+    font-size: clamp(0.25em, .45vw + 0.1em, 1em);
+    width: clamp(200px, 20vw + 200px, 15vw);
+    height: clamp(450px, 20vw + 200px, 40vh);
+}
+
+main .preReal, main .postReal {
+    opacity: 60%;
+
+}
+
+.preEntry h2, .postEntry h2 {
+    font-weight: normal;
+}
+
+.preEntry .leftTitle, .postEntry .rightTitle, .preNew .newLeftTitle, .postNew .newRightTitle {
+    font-weight: bold;
+}
+
+/* main .postEntry {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 50%;
+    width: clamp(200px, 20vw + 200px, 15vw);
+    height: clamp(450px, 20vw + 200px, 40vh);
+} */
+
+main .smEntry {
+    margin: auto;
+    /* width: clamp(200px, 20vw + 200px, 15vw);
+    height: clamp(450px, 20vw + 200px, 40vh); */
+    height: 100%;
+    border: 1px solid black;
+    background-color: whitesmoke;
+}
+
+.entryContainer {
+    margin: auto;
+    position: relative;
+}
+
+.entry {
+    margin: auto;
+    width: clamp(300px, 30vw + 200px, 25vw);
+    height: clamp(600px, 30vw + 200px, 60vh);
+    /* min-width: 30vw; */
+    /* background-color: bisque; */
+    border: 3px solid black;
+    background-color: whitesmoke;
+}
+
+.entryInterior {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+    padding: clamp(0.25em, 1vw + 0.5em, 2em);
+}
+
+
+.entry h2 {
+    font-size: clamp(1em, 1.25vw + 0.2em, 2.5em);
+    font-weight: normal;
+}
+
+.entry .body {
+    margin-bottom: 0;
+    font-size: clamp(1em, 1vw + 0.5em, 5em);
+}
+
+.entryInterior div, .smEntry div {
+    text-align: center;
+}
+
+.entryInterior .top {
+    width: 100%;
+    flex-basis: 30%;
+    margin-top: 2.5%;
+}
+
+.entryInterior .top h2 {
+    margin-bottom: 2%;
+}
+
+.mainTitle, .leftTitle, .rightTitle, .newLeftTitle, .newRightTitle {
+    margin-top: 5%;
+    margin-bottom: 5% !important;
+    font-weight: bold !important;
+}
+
+.entryInterior .middle {
+    width: 100%;
+    flex-basis: 50%;
+}
+
+.entryInterior .middle h2 {
+    margin-bottom: 5%;
+    height: 100%;
+}
+
+.entryInterior .bottom {
+    width: 100%;
+    flex-basis: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    margin-bottom: 5%;
+}
+
+.bottom .italic {
+    font-style: italic;
+}
+
+/* .bottom h2:nth-of-type(1) {
+    margin-top: 50%;
+} */
+
+.entryInterior .bottom h2 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Button Navigation */
+
+.arrows .leftOne {
+    position: absolute;
+    left: -10%;
+    top: 50%;
+    font-size: 2em;
+    cursor: pointer;
+    padding: 2%;
+}
+
+.arrows .rightOne {
+    position: absolute;
+    top: 50%;
+    right: -10%;
+    font-size: 2em;
+    cursor: pointer;
+    padding: 2%;
+}
+
+.buttonNav {
+    text-align: center;
+    margin-top: 1%;
+    font-size: clamp(1em, 1vw + 1em, 5em);
+}
+
+.buttonNav div {
+    display: inline-block;
+}
+
+.buttonNav i {
+    cursor: pointer;
+}
+
+.datePick {
+    text-align: center;
+    margin-top: 1%;
+}
+
+.datePick select {
+    font-size: clamp(0.75em, 1vw + 0.5em, 3em);
+    border: 1px solid black;
+    /* background: radial-gradient(circle, rgba(113,113,113,1) 0%, rgba(51,47,47,1) 100%); */
+    background-color: gray;
+    padding: clamp(0.5em, 0.5vw + 0.1em, 1em);
+    color: white;
+    border-radius: 0.25em;
+}
+
+.subContainer {
+    text-align: center;
+    margin-top: 1%;
+}
+
+.subContainer button {
+    font-size: clamp(1em, 1vw + 0.75em, 3em);
+    width: clamp(2em, 1vw + 3em, 5em);
+    height: clamp(2em, 1vw + 1em, 5em);
+    border-radius: 0.5em;
+    cursor: pointer;
+    background-color: var(--blue);
+    color: white;
+    border: 1px solid black;
+    /* padding: clamp(0.5em, 0.5vw + 0.1em, 2em); */
+}
+
+/* Game Page */
+
+.correct {
+    background-color: green !important;
+}
+
+.incorrect {
+    background-color: red !important;
+}
+
+.correctFont {
+    color: green;
+}
+
+.incorrectFont {
+    color: red;
+}
+
+.hideAnswer {
+    background-color: lightgray !important;
+}
+
+.gameContainer {
+    text-align: center;
+}
+
+.gameContainer h2 {
+    font-weight: normal;
+    margin-bottom: 1%;
+}
+
+.gameContainer .question {
+    margin-bottom: 2%;
+}
+
+.gameContainer .response {
+    width: 100%;
+    min-height: 3vw;
+    font-size: clamp(3em, 1vw + 1em, 6em);
+    font-weight: bold;
+}
+
+.gameContainer .content {
+    margin-top: 2%;
+}
+
+.choices {
+    display: flex;
+    margin: auto;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 50%;
+    /* gap: 1px 2px; */
+}
+
+/* .choices div {
+    width: 50%;
+    text-align: center;
+    border: 1px solid black;
+    margin-right: 0.1%;
+    margin-left: 0.1%;
+    background-color: lightgray;
+} */
+
+.choices .bottom {
+    display: flex;
+    justify-content: space-around;
+    flex-basis: 100%;
+}
+
+.bottom div {
+    width: 50%;
+    text-align: center;
+    border: 1px solid black;
+    margin-right: 0.1%;
+    margin-left: 0.1%;
+    background-color: lightgray;
+}
+
+.choice {
+    cursor: pointer;
+    padding: clamp(0.5em, 0.5vw + 3em, 2em);
+    font-size: clamp(1em, 0.5vw + 0.5em, 3em);
+    flex-basis: 50%;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.c:hover {
+    background-color: white !important;
+}
+
+.gameBtn {
+    margin: auto;
+    text-align: center;
+    margin-top: 2%;
+}
+
+.gameBtn button {
+    padding: 1em;
+}
+
+
+/* View Page */
+
+.grayed {
+    color: lightgray;
+}
+
+.calendar .interior {
+    text-align: center;
+    width: 70%;
+    margin: auto;
+    border: 1px solid black;
+    background-color: whitesmoke;
+}
+
+.calendar .interior h2:nth-of-type(1) {
+    margin-top: 2%;
+    margin-bottom: 4%;
+    font-size: clamp(1em, 1vw + 1em, 4em);
+}
+
+.calendar .interior .row, .calendar .interior .calendarBody {
+    display: flex;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    flex-wrap: wrap;
+}
+
+.calMonth {
+    width: 30%;
+}
+
+.monthName {
+    display: flex;
+    justify-content: center;
+}
+
+.monthName h3, .monthName i {
+    font-size: clamp(1em, 1vw + 1em, 5em);
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.monthName i:nth-of-type(1) {
+    margin-left: 20%;
+    cursor: pointer;
+}
+
+.monthName i:nth-of-type(2) {
+    margin-right: 20%;
+    cursor: pointer;
+}
+
+.row h4, .calendarBody h4 {
+    flex-basis: 14.2857%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.row h4 {
+    font-weight: bold;
+    font-size: clamp(0.5em, 0.5vw + 1em, 3em);
+}
+
+.calendarBody h4 {
+    font-size: clamp(0.75em, 0.5vw + 0.75em, 2em);
+    font-weight: normal;
+}
+
+/* Animation Classes Left  */
+
+.newLeft {
+    animation: newLeft 0.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+.postLeft {
+    animation: postLeft 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.mainLeft {
+    animation: mainLeft 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.preLeft {
+    animation: preLeft 0.5s;
+    animation-fill-mode: forwards;
+}
+
+/* Animated Classes Right */
+
+.newRight {
+    animation: newRight 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.preRight {
+    animation: preRight 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.mainRight {
+    animation: mainRight 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.postRight {
+    animation: postRight 0.5s;
+    animation-fill-mode: forwards;
+}
+
+/* Absolute Positioned entries that move */
+
+main .preNew {
+    position: absolute !important;
+    left: 7.5vw;
+    border: none;
+    opacity: 50%;
+}
+
+.preFake {
+    position: absolute !important;
+    left: 7.5vw;
+    border: 1px solid black;
+    opacity: 50%;
+}
+
+.fakeMain {
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: 1px solid black;
+    opacity: 0;
+}
+
+.postFake {
+    position: absolute !important;
+    right: 7.5vw;
+    border: 1px solid black;
+    opacity: 50%;
+}
+
+.postNew {
+    position: absolute !important;
+    right: 7.5vw;
+    width: 0;
+    height: 0;
+    opacity: 50%;
+}
+
+.postFake .smEntry {
+    border: none;
+}
+
+.preFake .smEntry {
+    border: none;
+}
+
+/* .preFake .smEntry {
+    border: none;
+} */
+
+/* All left direction animations */
+
+@keyframes newLeft {
+    0% {
+        right: -30vw;
+        opacity: 50%;
+    }
+    100% {
+        width: clamp(200px, 20vw + 200px, 15vw);
+        height: clamp(450px, 20vw + 200px, 40vh);
+        opacity: 100%;
+        right: 7.5vw;
+        opacity: 50%;
+    }
+}
+
+@keyframes postLeft {
+    0% {
+        opacity: 50%;
+        font-size: clamp(0.25em, .25vw + 0.5em, 1em);
+    }
+    100% {
+        width: clamp(300px, 30vw + 200px, 25vw);
+        height: clamp(600px, 30vw + 200px, 60vh);
+        transform: translateX(-30vw);
+        opacity: 100%;
+        border: 3px solid black;
+        font-size: clamp(0.25em, .6vw + 0.4em, 1vw + 0.5em);
+    }
+    
+}
+
+@keyframes mainLeft {
+    0% {
+        opacity: 100%;
+        font-size: clamp(0.25em, .25vw + 0.25em, 1em);
+    }
+    100% {
+        transform: translateX(-30vw);
+        width: clamp(200px, 20vw + 200px, 15vw);
+        height: clamp(450px, 20vw + 200px, 40vh);
+        font-size: clamp(0.25em, .2vw + 0.2em, .5em);
+        opacity: 75%;
+    }
+}
+
+@keyframes preLeft {
+    0% {
+        left: 7.5vw;
+        
+    }
+    100% {
+        left: -25vw;
+    }
+}
+
+/* All right direction animations */
+
+@keyframes newRight {
+    0% {
+        left: -30vw;
+    }
+    100% {
+        width: clamp(200px, 20vw + 200px, 15vw);
+        height: clamp(450px, 20vw + 200px, 40vh);
+        opacity: 50%;
+        left: 7.5vw;
+    }
+}
+
+@keyframes preRight {
+    0% {
+        opacity: 50%;
+        font-size: clamp(0.25em, .25vw + 0.5em, 1em);
+    }
+    100% {
+        width: clamp(300px, 30vw + 200px, 25vw);
+        height: clamp(600px, 30vw + 200px, 60vh);
+        transform: translateX(30vw);
+        opacity: 100%;
+        border: 3px solid black;
+        font-size: clamp(0.25em, .5vw + 0.5em, 1vw + 0.6em);
+    }
+    
+}
+
+@keyframes mainRight {
+    0% {
+        opacity: 100%;
+        font-size: clamp(0.25em, .25vw + 0.5em, 1em);
+    }
+    100% {
+        transform: translateX(40vw);
+        width: clamp(200px, 20vw + 200px, 15vw);
+        height: clamp(450px, 20vw + 200px, 40vh);
+        font-size: clamp(0.25em, .2vw + 0.2em, .5em);
+        opacity: 70%;
+    }
+}
+
+@keyframes postRight {
+    0% {
+        right: 7.5vw;
+    }
+    100% {
+        right   : -25vw;
+    }
+}
+
+/* Fade animation */
+.fade {
+    animation: fade 1s;
+    animation-fill-mode: forwards;
+}
+
+.fadeFast {
+    animation: fadeFast 0.75s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fade {
+    0% {
+        color: black;
+    }
+    50% {
+        color: whitesmoke;
+    }
+    100% {
+        color: black;
+    }
+}
+
+@keyframes fadeFast {
+    0% {
+        color: whitesmoke;
+    }
+    100% {
+        color: black;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+
+    /* Index Page */
+
+    .preReal, .postReal, .preNew, .postNew {
+        display: none;
+    }
+
+    .preFake {
+        left: -100vw;
+    }
+
+    .postFake {
+        right: -100vw;
+    }
+
+    .entry {
+        width: clamp(50vw, 30vw + 200px, 350px);
+        height: clamp(70vh, 15vh + 200px, 80vh);
+        font-size: clamp(1em, 1vw + 1em, 3em);
+    }
+
+    /* Game page */
+
+    .choices {
+        display: block;
+        margin: auto;
+        width: 90%;
+    }
+
+    .choices .choice {
+        padding: clamp(0.25em, 0.25vw + 1em, 2em);
+    }
+
+    .gameContainer .content, .gameContainer .question, .gameContainer .response {
+        font-size: clamp(1em, 1vw + 0.5em, 2em);
+    }
+
+    .gameContainer .content {
+        margin-bottom: 5%;
+    }
+
+    .gameContainer .response {
+        min-height: 40px;
+        font-size: clamp(2em, 1vw + 0.5em, 3em);
+    }
+
+    .gameBtn {
+        position: absolute;
+        bottom: 1%;
+        left: 50%;
+        transform: translateX(-50%)
+    }
+
+    /* Calendar Page */
+
+    .calendar .interior {
+        width: 90%;
+    }
+
+    .calendar .monthName {
+        margin-left: 0;
+        margin-right: 0;
+        justify-content: space-between;
+    }
+
+    @keyframes preLeft {
+        0% {
+            display: none;
+            
+        }
+        100% {
+            display: none;
+        }
+    }
+
+    @keyframes postLeft {
+        0% {
+            opacity: 50%;
+            /* font-size: clamp(0.25em, .25vw + 0.5em, 1em); */
+        }
+        100% {
+            width: clamp(50vw, 30vw + 200px, 350px);
+            height: clamp(70vh, 15vh + 200px, 80vh);
+            transform: translateX(-125vw);
+            opacity: 100%;
+            border: 3px solid black;
+            font-size: clamp(1em, 1vw + 0.45em, 1.8em);
+        }
+        
+    }
+ 
+
+    @keyframes mainLeft {
+        0% {
+            opacity: 100%;
+        }
+        100% {
+            transform: translateX(-150vw);
+            /* font-size: clamp(0.25em, .2vw + 0.2em, .5em); */
+            opacity: 75%;
+        }
+    }
+
+    @keyframes mainRight {
+        0% {
+            opacity: 100%;
+        }
+        100% {
+            transform: translateX(150vw);
+            /* font-size: clamp(0.25em, .2vw + 0.2em, .5em); */
+            opacity: 70%;
+        }
+    }
+
+    @keyframes preRight {
+        0% {
+            opacity: 50%;
+            /* font-size: clamp(0.25em, .25vw + 0.5em, 1em); */
+        }
+        100% {
+            width: clamp(50vw, 30vw + 200px, 350px);
+            height: clamp(70vh, 15vh + 200px, 80vh);
+            transform: translateX(125vw);
+            opacity: 100%;
+            border: 3px solid black;
+            font-size: clamp(1em, 1vw + 0.45em, 1.8em);
+        }
+        
+    }
+    
+    @keyframes postRight {
+        0% {
+            display: none;
+        }
+        100% {
+            display: none;
+        }
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+
+    @keyframes postLeft {
+        0% {
+            opacity: 50%;
+            /* font-size: clamp(0.25em, .25vw + 0.5em, 1em); */
+        }
+        100% {
+            width: clamp(50vw, 30vw + 200px, 350px);
+            height: clamp(70vh, 15vh + 200px, 80vh);
+            transform: translateX(-118vw);
+            opacity: 100%;
+            border: 3px solid black;
+            font-size: clamp(0.8em, 1vw + 0.35em, 1.4em);
+        }
+        
+    }
+
+    @keyframes preRight {
+        0% {
+            opacity: 50%;
+            /* font-size: clamp(0.25em, .25vw + 0.5em, 1em); */
+        }
+        100% {
+            width: clamp(50vw, 30vw + 200px, 350px);
+            height: clamp(70vh, 15vh + 200px, 80vh);
+            transform: translateX(118vw);
+            opacity: 100%;
+            border: 3px solid black;
+            font-size: clamp(0.8em, 1vw + 0.35em, 1.4em);
+        }
+        
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    @keyframes postLeft {
+        0% {
+            opacity: 50%;
+            /* font-size: clamp(0.25em, .25vw + 0.5em, 1em); */
+        }
+        100% {
+            width: clamp(50vw, 30vw + 200px, 350px);
+            height: clamp(70vh, 15vh + 200px, 80vh);
+            transform: translateX(-110vw);
+            opacity: 100%;
+            border: 3px solid black;
+            font-size: clamp(0.8em, 1vw + 0.35em, 1.4em);
+        }
+        
+    }
+
+    @keyframes preRight {
+        0% {
+            opacity: 50%;
+            /* font-size: clamp(0.25em, .25vw + 0.5em, 1em); */
+        }
+        100% {
+            width: clamp(50vw, 30vw + 200px, 350px);
+            height: clamp(70vh, 15vh + 200px, 80vh);
+            transform: translateX(110vw);
+            opacity: 100%;
+            border: 3px solid black;
+            font-size: clamp(0.8em, 1vw + 0.35em, 1.4em);
+        }
+        
+    }
+}
+

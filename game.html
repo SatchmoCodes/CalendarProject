@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="./js/script.js" defer></script>
+    <script src="https://kit.fontawesome.com/96b11160a9.js" crossorigin="anonymous"></script>
+    <title>Facebook Calendar</title>
+</head>
+<body>
+    <nav>
+        <div class="interior">
+            <a href="index.html"><h2>Home</h2></a>
+            <a href="game.html"><h2>Game</h2></a>
+            <a href="view.html"><h2>View</h2></a>
+        </div>
+    </nav>
+    <h1>You Might Be A Bad Parent Calendar</h1>
+      <section>
+        <div class="gameContainer">
+            <h2 class="score"><span class="totalCorrect">0</span>/<span class="totalAnswered">0</span></h2>
+            <h2 class="question">Which title goes with the following entry?</h2>
+            <h2 class="response"></h2>
+            <h2 class="content">What color is my underwear?</h2>
+        </div>
+        <div class="choices">
+                <div class="c choice hideAnswer">
+                    <h3>Red</h3>
+                </div>
+                <div class="c choice hideAnswer">
+                    <h3>Yellow</h3>
+                </div>
+                <div class="c choice hideAnswer">
+                    <h3>Green</h3>
+                </div>
+                <div class="c choice hideAnswer">
+                    <h3>Blue</h3>
+                </div>
+        </div>
+        <div class="gameBtn">
+            <button class="generatebtn" onclick="generateQuestion()" disabled>Next Question</button>
+        </div>
+    </section>
+</body>
+</html>
