@@ -50,6 +50,10 @@ nav h2 {
     color: white;
 }
 
+a:link {
+    text-decoration: none;
+}
+
 h1 {
     text-align: center;
     font-size: clamp(2em, 2vw + 1em, 8em);
@@ -131,7 +135,7 @@ main .smEntry {
 
 
 .entry h2 {
-    font-size: clamp(1em, 1.25vw + 0.2em, 2.5em);
+    font-size: clamp(1em, 1.1vw + 0.2em, 2.5em);
     font-weight: normal;
 }
 
@@ -238,7 +242,7 @@ main .smEntry {
     border: 1px solid black;
     /* background: radial-gradient(circle, rgba(113,113,113,1) 0%, rgba(51,47,47,1) 100%); */
     background-color: gray;
-    padding: clamp(0.5em, 0.5vw + 0.1em, 1em);
+    padding: clamp(0.5em, 0.25vw + 0.1em, 1em);
     color: white;
     border-radius: 0.25em;
 }
@@ -254,7 +258,7 @@ main .smEntry {
     height: clamp(2em, 1vw + 1em, 5em);
     border-radius: 0.5em;
     cursor: pointer;
-    background-color: var(--blue);
+    background-color: var(--green);
     color: white;
     border: 1px solid black;
     /* padding: clamp(0.5em, 0.5vw + 0.1em, 2em); */
@@ -415,20 +419,64 @@ main .smEntry {
     cursor: pointer;
 }
 
-.row h4, .calendarBody h4 {
+.calendar .row h4, .calendarBody h4 {
     flex-basis: 14.2857%;
     margin-top: 1%;
     margin-bottom: 1%;
 }
 
+.calendarBody h4 {
+    font-size: clamp(0.75em, 0.5vw + 0.75em, 2em);
+    font-weight: normal;
+}
+
 .row h4 {
+    font-weight: bold;
+    font-size: clamp(0.5em, 0.5vw + 1em, 3em);
+    height: 100%;
+}
+
+.table table {
+    width: 90%;
+    margin: auto;
+    margin-top: 5%;
+    text-align: center;
+    border: 1px solid black;
+    background-color: whitesmoke;
+    margin-bottom: 5%;
+}
+
+/* .table .interior .row {
+    display: flex;
+    justify-content: center;
+} */
+
+.table table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.table table th {
+    padding: clamp(0.5em, 0.5vw + 0.5em, 3em);
     font-weight: bold;
     font-size: clamp(0.5em, 0.5vw + 1em, 3em);
 }
 
-.calendarBody h4 {
-    font-size: clamp(0.75em, 0.5vw + 0.75em, 2em);
-    font-weight: normal;
+.table table td {
+    padding: clamp(0.5em, 0.5vw + 0.5em, 3em);
+    font-size: clamp(0.5em, 0.5vw + 0.75em, 3em);
+}
+
+.table .interior .row h4:nth-of-type(1) {
+    width: 20%;
+}
+
+.table .interior .row h4:nth-of-type(2) {
+    width: 30%;
+}
+
+.table .interior .row h4:nth-of-type(3) {
+    width: 50%;
 }
 
 /* Animation Classes Left  */
@@ -546,7 +594,7 @@ main .preNew {
 @keyframes postLeft {
     0% {
         opacity: 50%;
-        font-size: clamp(0.25em, .25vw + 0.5em, 1em);
+        font-size: clamp(0.25em, .25vw + 0.25em, 1em);
     }
     100% {
         width: clamp(300px, 30vw + 200px, 25vw);
@@ -554,7 +602,7 @@ main .preNew {
         transform: translateX(-30vw);
         opacity: 100%;
         border: 3px solid black;
-        font-size: clamp(0.25em, .6vw + 0.4em, 1vw + 0.5em);
+        font-size: clamp(0.25em, .6vw + 0.3em, 1vw + 0.5em);
     }
     
 }
@@ -600,7 +648,7 @@ main .preNew {
 @keyframes preRight {
     0% {
         opacity: 50%;
-        font-size: clamp(0.25em, .25vw + 0.5em, 1em);
+        font-size: clamp(0.25em, .25vw + 0.25em, 1em);
     }
     100% {
         width: clamp(300px, 30vw + 200px, 25vw);
@@ -608,7 +656,7 @@ main .preNew {
         transform: translateX(30vw);
         opacity: 100%;
         border: 3px solid black;
-        font-size: clamp(0.25em, .5vw + 0.5em, 1vw + 0.6em);
+        font-size: clamp(0.25em, .6vw + 0.3em, 1vw + 0.6em);
     }
     
 }
@@ -694,6 +742,7 @@ main .preNew {
         z-index: 2;
     }
 
+
     /* Game page */
 
     .choices {
@@ -737,6 +786,29 @@ main .preNew {
         margin-right: 0;
         justify-content: space-between;
     }
+    /* Mobile animation classes */
+
+    .postLeft, .preRight {
+        font-size: clamp(1em, 1vw + 0.45em, 1.8em) !important;
+    }
+
+    .entry .entryInterior .top h2:nth-of-type(1), .entry .entryInterior .top h2:nth-of-type(2) {
+        font-size: clamp(0.75em, 0.75vw + 0.5em, 1.5em) !important;
+    }
+
+    .entry .entryInterior .bottom {
+        font-size: clamp(0.5em, 0.5vw + 0.5em, 1.5em) !important;
+    }
+
+    .smEntry .entryInterior .top h2:nth-of-type(1), .smEntry .entryInterior .top h2:nth-of-type(2) {
+        font-size: clamp(0.75em, 0.75vw + 0.7em, 1.5em) !important;
+    }
+
+    .smEntry .entryInterior .bottom {
+        font-size: clamp(0.5em, 0.5vw + 0.4em, 1.5em) !important;
+    }
+
+    /* Mobile Animations */
 
     @keyframes newLeft {
         0% {
@@ -775,7 +847,6 @@ main .preNew {
             transform: translateX(-17vw);
             opacity: 100%;
             border: 3px solid black;
-            font-size: clamp(1em, 1vw + 0.45em, 1.8em);
         }
         
     }
@@ -817,7 +888,6 @@ main .preNew {
             transform: translateX(17vw);
             opacity: 100%;
             border: 3px solid black;
-            font-size: clamp(1em, 1vw + 0.45em, 1.8em);
         }
         
     }
@@ -836,6 +906,10 @@ main .preNew {
 }
 
 @media screen and (max-width: 600px) {
+
+    .table table {
+        width: 100%;
+    }
 
     @keyframes postLeft {
         0% {
@@ -878,6 +952,18 @@ main .preNew {
 
 @media screen and (max-width: 400px) {
 
+    .postLeft, .preRight {
+        font-size: clamp(0.8em, 1vw + 0.35em, 1.4em) !important;
+    }
+
+    .smEntry .entryInterior .top h2:nth-of-type(1), .smEntry .entryInterior .top h2:nth-of-type(2) {
+        font-size: clamp(0.75em, 0.75vw + 0.85em, 1.5em) !important;
+    }
+
+    .smEntry .entryInterior .bottom {
+        font-size: clamp(0.5em, 0.5vw + 0.45em, 1.5em) !important;
+    }
+
     @keyframes postLeft {
         0% {
             opacity: 50%;
@@ -892,7 +978,7 @@ main .preNew {
             transform: translateX(-1vw);
             opacity: 100%;
             border: 3px solid black;
-            font-size: clamp(0.8em, 1vw + 0.35em, 1.4em);
+            
         }
         
     }
@@ -911,7 +997,6 @@ main .preNew {
             transform: translateX(1vw);
             opacity: 100%;
             border: 3px solid black;
-            font-size: clamp(0.8em, 1vw + 0.35em, 1.4em);
         }
         
     }
