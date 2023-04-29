@@ -21,6 +21,7 @@ console.log(dateArr)
 //     let date = new Date(dateArr[j])
 // }
 
+// console.log(fullDateArr)
 
 
 let preEntry = document.querySelector('.preReal')
@@ -323,7 +324,6 @@ export function answer(i) {
     let totalAnswered = parseInt(totalAnsweredlbl.innerText)
     let totalCorrect = parseInt(totalCorrectlbl.innerText)
     let choices = document.querySelectorAll('.choice')
-    console.log(i.dataset.ans)
     choices.forEach(choice => {
         choice.classList.remove('hideAnswer')
         choice.classList.remove('c')
@@ -353,6 +353,7 @@ let calMonth = document.querySelector('.calMonth')
 let calendarBody = document.querySelector('.calendarBody')
 let daySection = document.querySelector('.daySection')
 
+
 export function calMonthChange(e) {
     let val = parseInt(e.dataset.val)
     let monthIndex = parseInt(calMonth.dataset.index)
@@ -366,6 +367,7 @@ export function calMonthChange(e) {
             break
     }
     
+    
             let monthLength = 0
             // find first day of month to find where to start row at
             for (let i = 0; i < fullDateArr.length; i++) {
@@ -377,6 +379,7 @@ export function calMonthChange(e) {
                         i++
                     }
                     calendarBuilder(index, monthStart, monthLength, newMonth)
+                    tableBuilder(index, newMonth)
                 }
             }
             calMonth.innerText = months[newMonth]
@@ -397,8 +400,6 @@ function calendarBuilder(i, start, monthLength, newMonth) {
     let x = 0
     let startI = i
 
-    console.log('at start:' + fullDateArr[i])
-
     while (x < monthLength + start) {
         let rowItem = document.createElement('h4')
         if (fullDateArr[i - start] != null) {
@@ -406,28 +407,61 @@ function calendarBuilder(i, start, monthLength, newMonth) {
         }
         if (i < fullDateArr.length - 1 && fullDateArr[i - start] != null) {
             if (fullDateArr[i - start].getMonth() != fullDateArr[startI].getMonth()) {
-                console.log('getting grayed upper ' + fullDateArr[i - start])
                 rowItem.classList.add('grayed')
             }
         }
         calendarBody.append(rowItem)
         i++
         x++
-        console.log(i)
     }
 
     while (x >= monthLength + start && x % 7 != 0 && fullDateArr[i] != null) {
         let rowItem = document.createElement('h4')
-        console.log(i)
-        console.log(fullDateArr[i])
         if (fullDateArr[i].getMonth() != newMonth && i - start <= 364) {
             rowItem.classList.add('grayed')
-            console.log('getting grayed lower ' + fullDateArr[i - start])
         }
         rowItem.innerText = fullDateArr[i - start].getDate()
         calendarBody.append(rowItem)
         i++
         x++
+    }
+}
+
+
+
+
+
+
+
+export function tableBuilder(index, newMonth) {
+    console.log('hi')
+    let calendarTable = document.querySelector('.calendarTable')
+    let rows = document.querySelectorAll('.tableRow')
+
+    for (let x = 0; x < rows.length; x++) {
+        calendarTable.deleteRow(1)
+    }
+
+    calendarTable.classList.add('fadeFast')
+    setTimeout(() => {
+        calendarTable.classList.remove('fadeFast')
+    }, "750")
+
+    for (let i = index; i < fullDateArr.length; i++) {
+        if (fullDateArr[i].getMonth() == newMonth) {
+            let tr = document.createElement('tr')
+            tr.classList.add('tableRow')
+            let date = document.createElement('td')
+            let title = document.createElement('td')
+            let content = document.createElement('td')
+            date.innerText = data.entries[i].date
+            title.innerText = data.entries[i].title
+            content.innerText = data.entries[i].content
+            tr.append(date)
+            tr.append(title)
+            tr.append(content)
+            calendarTable.append(tr)
+        }
     }
 }
 
@@ -441,4 +475,5 @@ if (choices != null) {
 
 if (calMonth != null) {
     calendarBuilder(0, 6, 31, 0)
+    tableBuilder(0, 0)
 }
