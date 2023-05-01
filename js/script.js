@@ -301,6 +301,7 @@ function generateQuestion() {
         choice.classList.remove('incorrect')
         choice.classList.add('hideAnswer')
         choice.classList.add('c')
+        choice.dataset.clicked = 'false'
     })
     
     for (let i = 0; i < 4; i++) {
@@ -336,31 +337,33 @@ function generateQuestion() {
 document.querySelectorAll(".choice").forEach(choice =>
     choice.addEventListener("click", event => {
     
-  
-        let totalAnsweredlbl = document.querySelector('.totalAnswered')
-        let totalCorrectlbl = document.querySelector('.totalCorrect')
-        let generatebtn = document.querySelector('.generatebtn')
-        let response = document.querySelector('.response')
-        let totalAnswered = parseInt(totalAnsweredlbl.innerText)
-        let totalCorrect = parseInt(totalCorrectlbl.innerText)
-        let choices = document.querySelectorAll('.choice')
-        choices.forEach(choice => {
-            choice.classList.remove('hideAnswer')
-            choice.classList.remove('c')
-        });
-        if (event.target.getAttribute('data-ans') == 'correct') {
-            totalCorrect++
-            response.innerText = 'Correct'
-            response.classList.add('correctFont')
+        if (choice.dataset.clicked == 'false') {
+            let totalAnsweredlbl = document.querySelector('.totalAnswered')
+            let totalCorrectlbl = document.querySelector('.totalCorrect')
+            let generatebtn = document.querySelector('.generatebtn')
+            let response = document.querySelector('.response')
+            let totalAnswered = parseInt(totalAnsweredlbl.innerText)
+            let totalCorrect = parseInt(totalCorrectlbl.innerText)
+            let choices = document.querySelectorAll('.choice')
+            choices.forEach(choice => {
+                choice.classList.remove('hideAnswer')
+                choice.classList.remove('c')
+                choice.dataset.clicked = 'true'
+            });
+            if (event.target.getAttribute('data-ans') == 'correct') {
+                totalCorrect++
+                response.innerText = 'Correct'
+                response.classList.add('correctFont')
+            }
+            else {
+                response.innerText = 'Incorrect'
+                response.classList.add('incorrectFont')
+            }
+            totalAnswered++
+            totalAnsweredlbl.innerText = totalAnswered
+            totalCorrectlbl.innerText = totalCorrect
+            generatebtn.removeAttribute('disabled')
         }
-        else {
-            response.innerText = 'Incorrect'
-            response.classList.add('incorrectFont')
-        }
-        totalAnswered++
-        totalAnsweredlbl.innerText = totalAnswered
-        totalCorrectlbl.innerText = totalCorrect
-        generatebtn.removeAttribute('disabled')
 }))
 
 
