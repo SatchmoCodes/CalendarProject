@@ -18,62 +18,30 @@
         </div>
     </nav>
     <h1>You Might Be A Bad Parent Calendar</h1>
-    <section class="calendar">
-        <div class="interior">
-            <h2>Calendar 2022</h2>
-            <div class="monthName">
-                <i class="fa-solid fa-angle-left calMonthChange" data-val="-1"></i>
-                <h3 class="calMonth" data-index="0">January</h3>
-                <i class="fa-solid fa-angle-right calMonthChange" data-val="1"></i>
-            </div>
-            <div class="daySection">
-                <div class="row">
-                    <h4>Sun</h4>
-                    <h4>Mon</h4>
-                    <h4>Tue</h4>
-                    <h4>Wed</h4>
-                    <h4>Thu</h4>
-                    <h4>Fri</h4>
-                    <h4>Sat</h4>
-                </div>
-                <div class="calendarBody">
-                    <h4>1</h4>
-                    <h4>2</h4>
-                    <h4>3</h4>
-                    <h4>4</h4>
-                    <h4>5</h4>
-                    <h4>6</h4>
-                    <h4>7</h4>
-                    <h4>8</h4>
-                </div>
-            </div>
+      <section>
+        <div class="gameContainer">
+            <h2 class="score"><span class="totalCorrect">0</span>/<span class="totalAnswered">0</span></h2>
+            <h2 class="question">Which title goes with the following entry?</h2>
+            <h2 class="response"></h2>
+            <h2 class="content">What color is my underwear?</h2>
         </div>
-    </section>
-    <section class="table">
-        <!-- <div class="interior">
-            <div class="row">
-                <h4>Date</h4>
-                <h4>Title</h4>
-                <h4>Content</h4>
-            </div>
-            <div class="row">
-                <h4>1/1/2022</h4>
-                <h4>COPYRIGHT DAY</h4>
-                <h4>hello</h4>
-            </div>
-        </div> -->
-        <table class="calendarTable">
-            <tr class="row">
-                <th>Date</th>
-                <th>Title</th>
-                <th>Content</th>
-            </tr>
-                <!-- <tr class="tableRow">
-                    <td>1/1/2022</td>
-                    <td>COPYRIGHT DAY</td>
-                    <td>If neither you nor your daughter can pronounce the words in a book report that you argue was not plagiarized, you might be a bad parent.</td>
-                </tr> -->
-        </table>
+        <div class="choices">
+                <div class="c choice hideAnswer">
+                    <h3>Red</h3>
+                </div>
+                <div class="c choice hideAnswer">
+                    <h3>Yellow</h3>
+                </div>
+                <div class="c choice hideAnswer">
+                    <h3>Green</h3>
+                </div>
+                <div class="c choice hideAnswer">
+                    <h3>Blue</h3>
+                </div>
+        </div>
+        <div class="gameBtn">
+            <button class="generatebtn" disabled>Next Question</button>
+        </div>
     </section>
 </body>
 </html>
