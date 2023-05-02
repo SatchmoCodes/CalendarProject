@@ -1,5 +1,8 @@
 :root {
-    --green: rgb(5, 57, 3);
+    --dark: #1D2120;
+    --rust: #A66134;
+    --rustFade: #aa8c78;
+    --header: white;
     --blue: rgb(29, 61, 167);
 }
 
@@ -24,18 +27,21 @@
 }
 
 body {
-    background: linear-gradient(90deg, rgba(184,184,158,1) 0%, rgba(245,245,220,1) 50%, rgba(184,184,158,1) 100%);
-    font-family: Helvetica, sans-serif; 
+    background-color: var(--dark);
+    font-family: Futura,Trebuchet MS,Arial,sans-serif; 
+}
+
+footer div {
+    background-color: white;
+    width: 100%;
+    height: 10vh;
+    margin-top: 5vh;
 }
 
 /* Navigation and h1 */
 
 nav {
-    background-color: rgb(5, 57, 3);
-    border: 1px solid black;
-    border-right: none;
-    border-left: none;
-    border-top: none;
+    background-color: var(--header);
 }
 
 nav .interior {
@@ -47,7 +53,7 @@ nav .interior {
 
 nav h2 {
     cursor: pointer;
-    color: white;
+    color: var(--dark);
 }
 
 a:link {
@@ -59,6 +65,8 @@ h1 {
     font-size: clamp(2em, 2vw + 1em, 8em);
     margin-top: 2%;
     margin-bottom: 2%;
+    font-weight: lighter;
+    color: white;
 }
 
 /* Entry Section */
@@ -105,7 +113,7 @@ main .smEntry {
     height: clamp(450px, 20vw + 200px, 40vh); */
     height: 100%;
     border: 1px solid black;
-    background-color: whitesmoke;
+    background-color: white;
 }
 
 .entryContainer {
@@ -120,7 +128,7 @@ main .smEntry {
     /* min-width: 30vw; */
     /* background-color: bisque; */
     border: 3px solid black;
-    background-color: whitesmoke;
+    background-color: white;
 }
 
 .entryInterior {
@@ -207,6 +215,7 @@ main .smEntry {
     font-size: 2em;
     cursor: pointer;
     padding: 2%;
+    color: white;
 }
 
 .arrows .rightOne {
@@ -216,6 +225,7 @@ main .smEntry {
     font-size: 2em;
     cursor: pointer;
     padding: 2%;
+    color: white;
 }
 
 .buttonNav {
@@ -239,12 +249,13 @@ main .smEntry {
 
 .datePick select {
     font-size: clamp(0.75em, 1vw + 0.5em, 3em);
+    font-family: Futura,Trebuchet MS,Arial,sans-serif;
+    font-weight: bold;
     border: 1px solid black;
     /* background: radial-gradient(circle, rgba(113,113,113,1) 0%, rgba(51,47,47,1) 100%); */
-    background-color: gray;
+    background-color: var(--rust);
     padding: clamp(0.5em, 0.25vw + 0.1em, 1em);
     color: white;
-    border-radius: 0.25em;
 }
 
 .subContainer {
@@ -253,14 +264,17 @@ main .smEntry {
 }
 
 .subContainer button {
-    font-size: clamp(1em, 1vw + 0.75em, 3em);
-    width: clamp(2em, 1vw + 3em, 5em);
-    height: clamp(2em, 1vw + 1em, 5em);
-    border-radius: 0.5em;
+    font-size: clamp(0.5em, 1vw + 0.5em, 2.5em);
+    font-family: Futura,Trebuchet MS,Arial,sans-serif;
+    font-weight: bold;
+    /* width: clamp(1em, 1.5vw + 3em, 4em);
+    height: clamp(1em, 1vw + 1em, 4em); */
+    padding: clamp(0.2em, 0.25vw + 0.35em, 0.5em);
     cursor: pointer;
-    background-color: var(--green);
+    background-color: var(--rust);
     color: white;
     border: 1px solid black;
+    margin-bottom: 2%;
     /* padding: clamp(0.5em, 0.5vw + 0.1em, 2em); */
 }
 
@@ -288,6 +302,7 @@ main .smEntry {
 
 .gameContainer {
     text-align: center;
+    color: white;
 }
 
 .gameContainer h2 {
@@ -307,7 +322,10 @@ main .smEntry {
 }
 
 .gameContainer .content {
+    width: 50%;
+    margin: auto;
     margin-top: 2%;
+    margin-bottom: 2%;
 }
 
 .choices {
@@ -363,7 +381,18 @@ main .smEntry {
 }
 
 .gameBtn button {
-    padding: 1em;
+    font-size: clamp(0.25em, 0.5vw + 0.25em, 1.25em);
+    font-family: Futura,Trebuchet MS,Arial,sans-serif;
+    font-weight: bold;
+    padding: clamp(0.5em, 0.5vw + 1em, 1.5em);
+    cursor: pointer;
+    background-color: var(--rust);
+    color: white;
+    border: 1px solid black;
+}
+
+.gameBtn button:disabled {
+    background-color: var(--rustFade);
 }
 
 
@@ -378,7 +407,7 @@ main .smEntry {
     width: 70%;
     margin: auto;
     border: 1px solid black;
-    background-color: whitesmoke;
+    background-color: white;
 }
 
 .calendar .interior h2:nth-of-type(1) {
@@ -442,7 +471,7 @@ main .smEntry {
     margin-top: 5%;
     text-align: center;
     border: 1px solid black;
-    background-color: whitesmoke;
+    background-color: white;
     margin-bottom: 5%;
 }
 
@@ -700,7 +729,7 @@ main .preNew {
         color: black;
     }
     50% {
-        color: whitesmoke;
+        color: white;
     }
     100% {
         color: black;
@@ -709,7 +738,7 @@ main .preNew {
 
 @keyframes fadeFast {
     0% {
-        color: whitesmoke;
+        color: white;
     }
     100% {
         color: black;
@@ -772,13 +801,18 @@ main .preNew {
         position: absolute;
         bottom: 1%;
         left: 50%;
-        transform: translateX(-50%)
+        transform: translateX(-50%);
+    }
+
+    .gameBtn button {
+        padding: clamp(1em, 1vw + 1em, 3em);
+        font-size: clamp(0.5em, 1vw + 0.5em, 3em);
     }
 
     /* Calendar Page */
 
     .calendar .interior {
-        width: 90%;
+        width: 95%;
     }
 
     .calendar .monthName {
@@ -786,6 +820,11 @@ main .preNew {
         margin-right: 0;
         justify-content: space-between;
     }
+
+    .table table {
+        width: 95%;
+    }
+
     /* Mobile animation classes */
 
     .postLeft, .preRight {
@@ -907,6 +946,8 @@ main .preNew {
 
 @media screen and (max-width: 600px) {
 
+    /* index */
+
     .postLeft, .preRight {
         font-size: clamp(0.8em, 1vw + 0.35em, 1.4em) !important;
     }
@@ -919,10 +960,21 @@ main .preNew {
         font-size: clamp(0.5em, 0.5vw + 0.45em, 1.5em) !important;
     }
 
-    .table table {
-        width: 100%;
+    .subContainer button {
+        padding: clamp(0.5em, 1vw + 0.5em, 2em);
     }
 
+    /* game page */
+
+    .gameContainer .content {
+        width: 90%;
+    }
+
+    
+
+    /* view page */
+
+    
     @keyframes postLeft {
         0% {
             opacity: 50%;
