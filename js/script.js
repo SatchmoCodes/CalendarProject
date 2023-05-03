@@ -46,7 +46,7 @@ let preNew = document.querySelector('.preNew')
 if (document.querySelector('.leftOne') != null) {
     document.querySelector('.leftOne').addEventListener("click", previous)
     document.querySelector('.rightOne').addEventListener("click", next)
-    document.querySelector('.month').addEventListener("click", monthChange)
+    document.querySelector('.month').addEventListener("change", monthChange)
     document.querySelector('.dateChange').addEventListener("click", dateChange)
 }
 
