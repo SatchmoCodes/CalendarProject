@@ -28,7 +28,8 @@
 
 body {
     background-color: var(--dark);
-    font-family: Futura,Trebuchet MS,Arial,sans-serif; 
+    font-family: Futura,Trebuchet MS,Arial,sans-serif;
+    overflow: hidden;
 }
 
 footer div {
